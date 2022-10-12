@@ -28,5 +28,17 @@ class Usuario{
         for(let i=0; i<this.libros.length; i++){
             books.push(this.libros[i].nombre);
         }
+        return books;
     }
 }
+
+const usuario = new Usuario('Eduardo', 'grossi', [], []);
+console.log(usuario);
+console.log(`El nombre de usuario es: ${usuario.getFullName()}`)
+usuario.addMascota('chucho');
+usuario.addMascota('Lola');
+usuario.addMascota('Pupi');
+console.log(`El usuario tiene: ${usuario.countMascotas()} mascotas`)
+usuario.addBook('El hombre eterno','G. K. Chesterton');
+usuario.addBook('Viaje al centro de la tierra', 'Julio Verne');
+console.log(`EL usuario tiene los siguientes libros: ${usuario.getBookNames()}`);
